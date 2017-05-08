@@ -54,9 +54,14 @@ public class ListViewAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.listview_item, parent, false);
         }
 
+        // 서버요청 <------------------------------
+
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
         ImageView iconImageView = (ImageView) convertView.findViewById(R.id.imageView1) ;
         ImageView lineImageView = (ImageView) convertView.findViewById(R.id.imageView2) ;
+       // if() {
+       //     iconImageView.setImageDrawable(R.drawable.ic_bus);
+       // }
         TextView titleTextView = (TextView) convertView.findViewById(R.id.textView1) ;
         TextView descTextView = (TextView) convertView.findViewById(R.id.textView2) ;
 
@@ -66,6 +71,7 @@ public class ListViewAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
               //  Toast.makeText(context,listViewItemList.get(position),Toast.LENGTH_SHORT).show();
+                System.out.println("$$$$$$$$$$$$$$$"+pos);
             }
         });
         btn.setFocusable(false);
