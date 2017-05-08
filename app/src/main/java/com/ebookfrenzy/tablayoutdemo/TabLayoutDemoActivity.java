@@ -1,9 +1,10 @@
 package com.ebookfrenzy.tablayoutdemo;
 
+
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -12,11 +13,13 @@ import android.view.MenuItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import com.tsengvn.typekit.TypekitContextWrapper;
 
 public class TabLayoutDemoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab_layout_demo);
 
@@ -26,10 +29,8 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
         TabLayout tabLayout =
                 (TabLayout) findViewById(R.id.tab_layout);
 
-        tabLayout.addTab(tabLayout.newTab().setIcon(
-                android.R.drawable.ic_dialog_email));
-        tabLayout.addTab(tabLayout.newTab().setIcon(
-                android.R.drawable.ic_dialog_dialer));
+        tabLayout.addTab(tabLayout.newTab().setText("진입로 셔틀버스"));
+        tabLayout.addTab(tabLayout.newTab().setText("시내 셔틀버스"));
 
         final ViewPager viewPager =
                 (ViewPager) findViewById(R.id.pager);
@@ -58,16 +59,8 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
                    }
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-    }
 
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -89,4 +82,12 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-}
+    @Override
+    protected void attachBaseContext(Context newBase) {
+
+        super.attachBaseContext(TypekitContextWrapper.wrap(newBase));
+
+    }
+
+
+    }
