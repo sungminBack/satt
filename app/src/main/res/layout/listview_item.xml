@@ -62,6 +62,7 @@
         android:layout_weight="0.4">
 
         <Button
+            android:layout_marginTop="10dp"
             android:text="ON"
             android:layout_width="56dp"
             android:layout_height="wrap_content"

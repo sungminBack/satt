@@ -1,7 +1,6 @@
 package com.ebookfrenzy.tablayoutdemo;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,8 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
-import com.tsengvn.typekit.TypekitContextWrapper;
 
 import static com.ebookfrenzy.tablayoutdemo.R.id.listview1;
 
@@ -32,7 +29,6 @@ public class Tab1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_tab1,null);
-        //ArrayAdapter Adapter = new ArrayAdapter(getActivity(),R.layout.listview_item);
 
         final ListView listview;
         ListViewAdapter adapter;
@@ -52,7 +48,7 @@ public class Tab1Fragment extends Fragment {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
                      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                 //   parent.getItemAtPosition(position);
+
                 Intent intent = new Intent(getActivity(),GmapActivity.class);
                 startActivity(intent);
 
