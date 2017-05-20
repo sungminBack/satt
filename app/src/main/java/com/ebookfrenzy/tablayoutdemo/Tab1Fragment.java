@@ -1,6 +1,7 @@
 package com.ebookfrenzy.tablayoutdemo;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.tsengvn.typekit.TypekitContextWrapper;
 
 import static com.ebookfrenzy.tablayoutdemo.R.id.listview1;
 
@@ -39,13 +42,14 @@ public class Tab1Fragment extends Fragment {
         //Adapter 생성
         adapter = new ListViewAdapter();
         listview.setAdapter(adapter);
-
+        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"버스관리사무소(기점)"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"이마트 앞(경전철 방면)"," ");
         adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"진입로(경전철 방면)"," ");
         adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"명지대역","잠시후 도착 예정");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"진입로(이마트 방면"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"이마트 앞"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"진입로(학교 방면)"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"이마트 앞(학교 방면)"," ");
         adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"명진당"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"1공학관"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"3공학관"," ");
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -58,7 +62,6 @@ public class Tab1Fragment extends Fragment {
         });
 
         return view;
-
     }
 
 }
