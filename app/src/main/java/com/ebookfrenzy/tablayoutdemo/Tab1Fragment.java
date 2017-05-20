@@ -14,6 +14,7 @@ import android.widget.ListView;
 import static com.ebookfrenzy.tablayoutdemo.R.id.listview1;
 
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -21,6 +22,7 @@ public class Tab1Fragment extends Fragment {
 
 
     public Tab1Fragment() {
+
         // Required empty public constructor
     }
 
@@ -38,12 +40,12 @@ public class Tab1Fragment extends Fragment {
         adapter = new ListViewAdapter();
         listview.setAdapter(adapter);
 
-        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line),"진입로(경전철 방면)"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line),"명지대역","잠시후 도착 예정");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line),"진입로(이마트 방면"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line),"이마트 앞"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line),"명진당"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line),"1공학관"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"진입로(경전철 방면)"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"명지대역","잠시후 도착 예정");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"진입로(이마트 방면"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"이마트 앞"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"명진당"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"1공학관"," ");
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

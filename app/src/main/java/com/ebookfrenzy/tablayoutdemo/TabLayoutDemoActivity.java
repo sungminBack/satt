@@ -5,11 +5,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+
 import com.tsengvn.typekit.TypekitContextWrapper;
 
 public class TabLayoutDemoActivity extends AppCompatActivity {
@@ -22,12 +25,15 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(null);
 
         TabLayout tabLayout =
                 (TabLayout) findViewById(R.id.tab_layout);
 
         tabLayout.addTab(tabLayout.newTab().setText("진입로 셔틀버스"));
         tabLayout.addTab(tabLayout.newTab().setText("시내 셔틀버스"));
+       // final View tabView = LayoutInflater.from(this).inflate(R.layout.view_custom_tab, null, false);
+       // tabLayout.addTab(tabLayout.newTab().setCustomView(tabView));
 
         final ViewPager viewPager =
                 (ViewPager) findViewById(R.id.pager);
@@ -43,6 +49,7 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
                    @Override
                    public void onTabSelected(TabLayout.Tab tab) {
                         viewPager.setCurrentItem(tab.getPosition());
+
                    }
 
                    @Override
