@@ -50,6 +50,7 @@ public class Tab1Fragment extends Fragment {
         adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"이마트 앞(학교 방면)"," ");
         adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"명진당"," ");
         adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),"3공학관"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(),R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(),R.drawable.bus_line2),""," ");
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
