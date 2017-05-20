@@ -18,7 +18,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#FFFFFF">
+            android:background="#FFFFFF"
+            android:weightSum="1">
 
         <ImageView
             android:layout_width="fill_parent"
@@ -52,5 +53,46 @@
 
     <include layout="@layout/content_tab_layout_demo"/>
 
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/question"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="180dp"
+        app:backgroundTint="@color/colorAccent"
+        android:visibility="invisible"
+        app:pressedTranslationZ="6dp"
+        android:elevation="6dp"
+        android:id="@+id/fabMsg"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/smallcalendar"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="100dp"
+        app:backgroundTint="@color/colorPrimary"
+        android:visibility="invisible"
+        app:pressedTranslationZ="6dp"
+        android:elevation="6dp"
+        android:id="@+id/fabThumb"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_weight="4.59"
+        android:elevation="6dp"
+        android:src="@drawable/bus"
+        android:visibility="visible"
+        app:pressedTranslationZ="12dp" />
 
 </android.support.design.widget.CoordinatorLayout>
