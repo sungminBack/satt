@@ -3,10 +3,10 @@
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <permission
-        android:name="com.satt.activity.locationapi.maps.permission.MAPS_RECEIVE"
+        android:name="com.ebookfrenzy.tablayoutdemo.activity.locationapi.maps.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.satt.activity.locationapi.maps.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.ebookfrenzy.tablayoutdemo.activity.locationapi.maps.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -39,8 +39,9 @@
         <activity android:name=".GmapActivity"></activity>
 
 
-        <meta-data android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBdPTicOeeC7IZY7j0ajqxEfzDzxXKNrj8"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBgtLXDMRqGRXOGJgYNQ0tYgbdyCAhCqkI"/>
     </application>
 
 </manifest>
