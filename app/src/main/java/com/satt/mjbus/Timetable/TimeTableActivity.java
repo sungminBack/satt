@@ -15,7 +15,6 @@ public class TimeTableActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedinstanceState) {
         super.onCreate(savedinstanceState);
-
         setContentView(com.satt.mjbus.R.layout.timetable_layout);
 
     }

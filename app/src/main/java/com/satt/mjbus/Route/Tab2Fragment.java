@@ -51,7 +51,6 @@ public class Tab2Fragment extends Fragment {
         adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"제 3공학관"," ");
         adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),""," ");
 
-
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

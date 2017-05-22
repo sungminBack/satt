@@ -146,7 +146,6 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
                 case com.satt.mjbus.R.id.fabTime:
                     Intent intent2 = new Intent(getApplicationContext(), TimeTableActivity.class);
                     startActivity(intent2);
-
                 default:
                     return;
             }

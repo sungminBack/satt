@@ -42,6 +42,7 @@
         <activity android:name=".Help.ViewPagerActivity" />
 
         <activity android:name=".Timetable.TimeTableActivity">
+
         </activity>
 
         <meta-data
