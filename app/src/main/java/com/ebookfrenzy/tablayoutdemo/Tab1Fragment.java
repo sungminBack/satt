@@ -6,11 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ViewFlipper;
 
 import com.tsengvn.typekit.TypekitContextWrapper;
 
@@ -21,8 +25,9 @@ import static com.ebookfrenzy.tablayoutdemo.R.id.listview1;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Tab1Fragment extends Fragment {
+public class Tab1Fragment extends Fragment{
 
+    ViewFlipper flipper;
 
     public Tab1Fragment() {
 
@@ -34,6 +39,8 @@ public class Tab1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_tab1,null);
+
+
 
         final ListView listview;
         ListViewAdapter adapter;

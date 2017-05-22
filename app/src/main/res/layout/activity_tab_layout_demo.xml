@@ -8,41 +8,6 @@
     android:fitsSystemWindows="true"
     tools:context="com.ebookfrenzy.tablayoutdemo.TabLayoutDemoActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
-       >
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#FFFFFF"
-            android:weightSum="1">
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logo"
-        android:baselineAlignBottom="false"
-        />
-
-        </android.support.v7.widget.Toolbar>
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            app:tabMode="fixed"
-            app:tabGravity="fill"
-            app:tabTextColor="@color/colorPrimaryDark"
-            app:tabSelectedTextColor="@color/colorPrimary"
-           />
-
-    </android.support.design.widget.AppBarLayout>
-
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
@@ -100,5 +65,72 @@
         android:layout_marginRight="16dp"
         android:elevation="6dp"
         android:visibility="visible"/>
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#FFFFFF"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:baselineAlignBottom="false"
+                android:src="@drawable/logo" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabTextColor="@color/colorPrimaryDark" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <ViewFlipper
+
+        android:id="@+id/flipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end">
+
+        <TextView
+            android:id="@+id/img01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="정류장에서 한줄로 서주세요"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="빨간버스 타세요"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/img02"
+            android:layout_weight="1"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:text="10시에는 명지대역에서타세요"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/img03"
+            android:layout_weight="1"
+            android:textAlignment="center"/>
+
+    </ViewFlipper>
 
 </android.support.design.widget.CoordinatorLayout>

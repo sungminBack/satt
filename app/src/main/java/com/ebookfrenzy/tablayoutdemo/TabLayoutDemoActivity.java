@@ -16,23 +16,32 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ViewFlipper;
 
 import com.tsengvn.typekit.TypekitContextWrapper;
 
 public class TabLayoutDemoActivity extends AppCompatActivity {
 
     //플롯팅버튼 변수
-
     Animation FabOpen, FabClose, FabRClockwise, FabRanticlockWise;
     private FloatingActionButton fabMain, fabQue, fabBus, fabTime;
     boolean isOpen = false;
+
+    //팁변수
+    ViewFlipper flipper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab_layout_demo);
-
+        //팁
+        flipper = (ViewFlipper)findViewById(R.id.flipper);
+        flipper.startFlipping();
+        Animation showIn= AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
+        flipper.setInAnimation(showIn);
+        flipper.setOutAnimation(this,android.R.anim.slide_out_right);
+        flipper.setFlipInterval(3000);
 
         //플롯팅변수
         FabOpen = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
