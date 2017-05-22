@@ -21,6 +21,7 @@ import com.tsengvn.typekit.TypekitContextWrapper;
 public class TabLayoutDemoActivity extends AppCompatActivity {
 
     //플롯팅버튼 변수
+
     Animation FabOpen, FabClose, FabRClockwise, FabRanticlockWise;
     private FloatingActionButton fabMain, fabMsg, fabThumb;
     boolean isOpen = false;
