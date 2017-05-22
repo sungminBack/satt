@@ -1,4 +1,4 @@
-package com.ebookfrenzy.tablayoutdemo;
+package com.satt.mjbus.Help;
 
 /**
  * Created by minji on 2017-05-22.
@@ -28,11 +28,11 @@ public class CustomAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container,int position){
         View view = null;
-        view=inflater.inflate(R.layout.viewpager_childview,null);
+        view=inflater.inflate(com.satt.mjbus.R.layout.viewpager_childview,null);
 
-        ImageView img = (ImageView)view.findViewById(R.id.img_viewpager_childimage);
+        ImageView img = (ImageView)view.findViewById(com.satt.mjbus.R.id.img_viewpager_childimage);
 
-        img.setImageResource(R.drawable.image01+position);
+        img.setImageResource(com.satt.mjbus.R.drawable.image01+position);
 
         container.addView(view);
 

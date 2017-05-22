@@ -1,4 +1,4 @@
-package com.ebookfrenzy.tablayoutdemo;
+package com.satt.mjbus.Map;
 
 import android.app.Activity;
 
@@ -32,10 +32,10 @@ public class GmapActivity extends Activity implements OnMapReadyCallback {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gmap_layout);
+        setContentView(com.satt.mjbus.R.layout.gmap_layout);
         Log.d("GmapActivity","Init Gmap Activity!!");
 
-        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.googleMap);
+        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(com.satt.mjbus.R.id.googleMap);
         mapFragment.getMapAsync(this);
     }
 

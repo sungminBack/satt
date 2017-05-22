@@ -1,4 +1,4 @@
-package com.ebookfrenzy.tablayoutdemo;
+package com.satt.mjbus;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

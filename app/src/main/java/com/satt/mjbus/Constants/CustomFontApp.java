@@ -1,4 +1,4 @@
-package com.ebookfrenzy.tablayoutdemo;
+package com.satt.mjbus.Constants;
 
 /**
  * Created by hn012 on 2017-05-06.

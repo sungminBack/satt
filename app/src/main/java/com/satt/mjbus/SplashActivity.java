@@ -1,8 +1,10 @@
-package com.ebookfrenzy.tablayoutdemo;
+package com.satt.mjbus;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.satt.mjbus.Route.TabLayoutDemoActivity;
 
 /**
  * Created by hn012 on 2017-05-04.

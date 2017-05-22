@@ -1,4 +1,4 @@
-package com.ebookfrenzy.tablayoutdemo;
+package com.satt.mjbus.Help;
 
 /**
  * Created by minji on 2017-05-22.
@@ -17,10 +17,10 @@ public class ViewPagerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedinstanceState) {
         super.onCreate(savedinstanceState);
-        setContentView(R.layout.viewpager_main);
+        setContentView(com.satt.mjbus.R.layout.viewpager_main);
 
         Intent intent = new Intent(this.getIntent());
-        pager = (ViewPager) findViewById(R.id.pager);
+        pager = (ViewPager) findViewById(com.satt.mjbus.R.id.pager);
 
         //ViewPager에 설정할 Adapter 객체 생성
         //ListView에서 사용하는 Adapter와 같은 역할.
@@ -38,14 +38,14 @@ public class ViewPagerActivity extends AppCompatActivity {
         int position;
 
         switch (v.getId()) {
-            case R.id.btn_previous:
+            case com.satt.mjbus.R.id.btn_previous:
                 position = pager.getCurrentItem();
                 //현재우ㅣ치(position)에서 -1해서 이전 position연결
                 //첫번쨰ㅏ라미터:설정할 현재위치
                 //두번째 파라미터:변경할 떄 부드럽게 이동하는가? false면 팍팍
                 pager.setCurrentItem(position - 1, true);
                 break;
-            case R.id.btn_next:
+            case com.satt.mjbus.R.id.btn_next:
                 position = pager.getCurrentItem(); //현재보여지는 아이템위치 리턴
 
                 //현재위치position에서 +1
