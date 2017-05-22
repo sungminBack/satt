@@ -54,7 +54,7 @@
     <include layout="@layout/content_tab_layout_demo"/>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabMsg"
+        android:id="@+id/fabQue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/question"
@@ -66,10 +66,10 @@
         android:visibility="invisible"/>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabThumb"
+        android:id="@+id/fabBus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/smallcalendar"
+        android:src="@drawable/bus"
         app:backgroundTint="#BDBDBD"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="16dp"
@@ -78,10 +78,22 @@
         android:visibility="invisible"/>
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/smallcalendar"
+        app:backgroundTint="#BDBDBD"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="226dp"
+        android:elevation="6dp"
+        android:visibility="invisible"/>
+
+    <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/bus"
+        android:src="@drawable/more"
         app:backgroundTint="#BDBDBD"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="16dp"

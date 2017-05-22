@@ -23,7 +23,7 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
     //플롯팅버튼 변수
 
     Animation FabOpen, FabClose, FabRClockwise, FabRanticlockWise;
-    private FloatingActionButton fabMain, fabMsg, fabThumb;
+    private FloatingActionButton fabMain, fabQue, fabBus, fabTime;
     boolean isOpen = false;
 
     @Override
@@ -40,11 +40,14 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
         FabRanticlockWise = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_anticlockwise);
 
         fabMain = (FloatingActionButton)findViewById(R.id.fabMain);
-        fabMsg = (FloatingActionButton)findViewById(R.id.fabMsg);
-        fabThumb = (FloatingActionButton)findViewById(R.id.fabThumb);
+        fabTime = (FloatingActionButton)findViewById(R.id.fabTime);
+        fabBus = (FloatingActionButton)findViewById(R.id.fabBus);
+        fabQue = (FloatingActionButton)findViewById(R.id.fabQue);
+
         fabMain.setOnClickListener(clickListener);
-        fabMsg.setOnClickListener(clickListener);
-        fabThumb.setOnClickListener(clickListener);
+        fabQue.setOnClickListener(clickListener);
+        fabTime.setOnClickListener(clickListener);
+        fabBus.setOnClickListener(clickListener);
 
 
 
@@ -97,18 +100,26 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
             switch (v.getId()) {
                 case R.id.fabMain :
                     if (!isOpen) {
-                        fabThumb.startAnimation(FabOpen);
-                        fabMsg.startAnimation(FabOpen);
+                        fabBus.startAnimation(FabOpen);
+                        fabQue.startAnimation(FabOpen);
+                        fabTime.startAnimation(FabOpen);
+
                         fabMain.startAnimation(FabRClockwise);
-                        fabThumb.setClickable(true);
-                        fabMsg.setClickable(true);
+
+                        fabBus.setClickable(true);
+                        fabQue.setClickable(true);
+                        fabTime.setClickable(true);
                         isOpen = true;
                     } else {
-                        fabThumb.startAnimation(FabClose);
-                        fabMsg.startAnimation(FabClose);
+                        fabBus.startAnimation(FabClose);
+                        fabQue.startAnimation(FabClose);
+                        fabTime.startAnimation(FabClose);
+
                         fabMain.startAnimation(FabRanticlockWise);
-                        fabThumb.setClickable(false);
-                        fabMsg.setClickable(false);
+
+                        fabTime.setClickable(false);
+                        fabQue.setClickable(false);
+                        fabTime.setClickable(false);
                         isOpen = false;
                     }
                     break;
