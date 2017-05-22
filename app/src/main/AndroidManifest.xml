@@ -40,7 +40,7 @@
 
 
         <activity android:name=".GmapActivity"></activity>
-
+        <activity android:name=".ViewPagerActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

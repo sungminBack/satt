@@ -2,6 +2,7 @@ package com.ebookfrenzy.tablayoutdemo;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -92,6 +93,8 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
         });
 
 
+
+
     }
 
     View.OnClickListener clickListener = new View.OnClickListener() {
@@ -123,6 +126,12 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
                         isOpen = false;
                     }
                     break;
+            }
+
+            switch (v.getId()){
+                case R.id.fabQue:
+                    Intent intent = new Intent(getApplicationContext(),ViewPagerActivity.class);
+                    startActivity(intent);
             }
         }
     };
