@@ -14,6 +14,8 @@ public class CustomFontApp extends Application{
 
         Typekit.getInstance()
                 .addCustom1(Typekit.createFromAsset(this, "123RF.ttf"))
-                .addCustom2(Typekit.createFromAsset(this, "BMJUA_ttf.ttf"));
+                .addCustom2(Typekit.createFromAsset(this, "BMJUA_ttf.ttf"))
+                .addCustom3(Typekit.createFromAsset(this, "NanumBarunpenR.ttf"))
+                .addCustom4(Typekit.createFromAsset(this, "NanumBarunpenB.ttf"));
     }
 }

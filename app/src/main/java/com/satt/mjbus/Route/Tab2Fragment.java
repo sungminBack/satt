@@ -49,6 +49,7 @@ public class Tab2Fragment extends Fragment {
         adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"이마트 앞(학교 방면)"," ");
         adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"제 1공학관"," ");
         adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"제 3공학관"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),""," ");
 
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {

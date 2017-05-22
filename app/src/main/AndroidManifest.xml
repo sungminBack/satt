@@ -6,7 +6,7 @@
         android:name="com.satt.mjbus.activity.locationapi.maps.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.ebookfrenzy.tablayoutdemo.activity.locationapi.maps.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.satt.mjbus.activity.locationapi.maps.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -37,10 +37,12 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
-
-
         <activity android:name=".Map.GmapActivity"></activity>
+
         <activity android:name=".Help.ViewPagerActivity" />
+
+        <activity android:name=".Timetable.TimeTableActivity">
+        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

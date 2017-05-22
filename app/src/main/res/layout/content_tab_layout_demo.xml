@@ -12,6 +12,6 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Route.TabLayoutDemoActivity"
     tools:showIn="@layout/activity_tab_layout_demo"
-    app:font="custom1">
+    >
 
 </RelativeLayout>

@@ -18,6 +18,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ViewFlipper;
 
 import com.satt.mjbus.Help.ViewPagerActivity;
+import com.satt.mjbus.Timetable.TimeTableActivity;
 import com.tsengvn.typekit.TypekitContextWrapper;
 
 public class TabLayoutDemoActivity extends AppCompatActivity {
@@ -141,6 +142,13 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
                 case com.satt.mjbus.R.id.fabQue:
                     Intent intent = new Intent(getApplicationContext(),ViewPagerActivity.class);
                     startActivity(intent);
+
+                case com.satt.mjbus.R.id.fabTime:
+                    Intent intent2 = new Intent(getApplicationContext(), TimeTableActivity.class);
+                    startActivity(intent2);
+
+                default:
+                    return;
             }
         }
     };
