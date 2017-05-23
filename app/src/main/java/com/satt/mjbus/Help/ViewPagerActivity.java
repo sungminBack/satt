@@ -17,6 +17,8 @@ public class ViewPagerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedinstanceState) {
         super.onCreate(savedinstanceState);
+
+        setTheme(android.R.style.Theme_NoTitleBar_Fullscreen);
         setContentView(com.satt.mjbus.R.layout.viewpager_main);
 
         Intent intent = new Intent(this.getIntent());
@@ -34,7 +36,7 @@ public class ViewPagerActivity extends AppCompatActivity {
         pager.setAdapter(adapter);
     }
 
-    public void mOnClick(View v) {
+   /* public void mOnClick(View v) {
         int position;
 
         switch (v.getId()) {
@@ -53,6 +55,6 @@ public class ViewPagerActivity extends AppCompatActivity {
                 break;
         }
 
-    }
+    }*/
 
 }
