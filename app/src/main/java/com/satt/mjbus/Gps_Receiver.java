@@ -71,13 +71,16 @@ public class Gps_Receiver{
         }
     }
 
-    public void getData(String url, GoogleMap map){
+    public void getData(String url, GoogleMap map, Marker m){
         googleMap = map;
+        bus_Marker = m;
         class GetDataJSON extends AsyncTask<String, Void, String> {
             @Override
             protected void onPreExecute(){
+                super.onPreExecute();
                 bus_Marker.remove();
             }
+
             @Override
             protected String doInBackground(String... params) {
                 String uri = params[0];

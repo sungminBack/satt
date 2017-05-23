@@ -13,6 +13,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.satt.mjbus.Constants.Constants;
 import com.satt.mjbus.Gps_Receiver;
@@ -27,7 +28,7 @@ public class GmapActivity extends Activity implements OnMapReadyCallback {
     public FloatingActionButton refreshBtn;
     private double Latitude;
     private double Longitude;
-
+    public Marker m1;
     public static final LatLng chapel_Gwan = new LatLng(Constants.chapel_Gwan_Lat, Constants.chapel_Gwan_Lon);
     public static final LatLng e_Mart_Down = new LatLng(Constants.e_Mart_Down_Lat, Constants.e_Mart_Down_Lon);
     public static final LatLng enter_Down = new LatLng(Constants.enter_Down_Lat, Constants.enter_Down_Lon);
@@ -62,8 +63,10 @@ public class GmapActivity extends Activity implements OnMapReadyCallback {
         googleMap.addMarker(new MarkerOptions().position(missha));
         googleMap.addMarker(new MarkerOptions().position(park_Station));
         googleMap.addMarker(new MarkerOptions().position(first_Gong));
+
+        m1 = googleMap.addMarker(new MarkerOptions().position(missha));
         receiver = new Gps_Receiver();
-        receiver.getData(Constants.url, googleMap);
+        receiver.getData(Constants.url, googleMap, m1);
     }
 
     @Override
@@ -80,7 +83,7 @@ public class GmapActivity extends Activity implements OnMapReadyCallback {
             @Override
             public void onClick(View v) {
 
-                receiver.getData(Constants.url, googleMap);
+                receiver.getData(Constants.url, googleMap, m1);
 
 
             }
