@@ -57,13 +57,12 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
 
         fabMain = (FloatingActionButton)findViewById(com.satt.mjbus.R.id.fabMain);
         fabTime = (FloatingActionButton)findViewById(com.satt.mjbus.R.id.fabTime);
-        fabBus = (FloatingActionButton)findViewById(com.satt.mjbus.R.id.fabBus);
         fabQue = (FloatingActionButton)findViewById(com.satt.mjbus.R.id.fabQue);
 
         fabMain.setOnClickListener(clickListener);
         fabQue.setOnClickListener(clickListener);
         fabTime.setOnClickListener(clickListener);
-        fabBus.setOnClickListener(clickListener);
+        //fabBus.setOnClickListener(clickListener);
 
 
 
@@ -117,18 +116,18 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
             switch (v.getId()) {
                 case com.satt.mjbus.R.id.fabMain :
                     if (!isOpen) {
-                        fabBus.startAnimation(FabOpen);
+                      //  fabBus.startAnimation(FabOpen);
                         fabQue.startAnimation(FabOpen);
                         fabTime.startAnimation(FabOpen);
 
                         fabMain.startAnimation(FabRClockwise);
 
-                        fabBus.setClickable(true);
+                    //    fabBus.setClickable(true);
                         fabQue.setClickable(true);
                         fabTime.setClickable(true);
                         isOpen = true;
                     } else {
-                        fabBus.startAnimation(FabClose);
+                      //  fabBus.startAnimation(FabClose);
                         fabQue.startAnimation(FabClose);
                         fabTime.startAnimation(FabClose);
 
