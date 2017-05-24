@@ -145,10 +145,13 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
             switch (v.getId()){
                 case com.satt.mjbus.R.id.fabQue:
                     Intent intent = new Intent(getApplicationContext(),ViewPagerActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
+                    break;
 
                 case com.satt.mjbus.R.id.fabTime:
                     Intent intent2 = new Intent(getApplicationContext(), TimeTableActivity.class);
+                    intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent2);
 
 

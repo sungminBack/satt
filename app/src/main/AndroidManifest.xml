@@ -39,9 +39,11 @@
 
         <activity android:name=".Map.GmapActivity"></activity>
 
-        <activity android:name=".Help.ViewPagerActivity" />
+        <activity android:name=".Help.ViewPagerActivity"
+            android:launchMode="singleTop"/>
 
-        <activity android:name=".Timetable.TimeTableActivity">
+        <activity android:name=".Timetable.TimeTableActivity"
+            android:launchMode="singleTop">
 
         </activity>
 
