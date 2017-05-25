@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.satt.mjbus.Constants.Constants;
 import com.satt.mjbus.Map.GmapActivity;
 
 import static com.satt.mjbus.R.id.listview2;
@@ -56,7 +57,9 @@ public class Tab2Fragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(getActivity(),GmapActivity.class);
+                intent.putExtra("RoadState", "Downtown");
                 startActivity(intent);
+
 
             }
         });

@@ -17,6 +17,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
+import java.util.Vector;
 
 /**
  * Created by dlgow on 2017-05-22.
@@ -32,9 +34,10 @@ public class Gps_Receiver{
 
     double Latitude;
     double Longitude;
-
+    Vector<Marker> markers = new Vector<Marker>();
 
     private Marker bus_Marker;
+
     JSONArray gps = null;
 
     public double Get_Latitude(){
@@ -59,10 +62,17 @@ public class Gps_Receiver{
 
                     Latitude = Double.parseDouble(strLat);
                     Longitude = Double.parseDouble(strLon);
+
+
+
+
                     LatLng bus_Position;
 
                     bus_Position = new LatLng(Latitude, Longitude);
+
+
                     bus_Marker = googleMap.addMarker(new MarkerOptions().position(bus_Position));
+
                     googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(bus_Position,16));
 
 
@@ -71,15 +81,14 @@ public class Gps_Receiver{
         }
     }
 
-    public void getData(String url, GoogleMap map, Marker m){
+    public Marker Get_Marker(){
+        return bus_Marker;
+    }
+
+    public void getData(String url, GoogleMap map){
         googleMap = map;
-        bus_Marker = m;
+
         class GetDataJSON extends AsyncTask<String, Void, String> {
-            @Override
-            protected void onPreExecute(){
-                super.onPreExecute();
-                bus_Marker.remove();
-            }
 
             @Override
             protected String doInBackground(String... params) {
