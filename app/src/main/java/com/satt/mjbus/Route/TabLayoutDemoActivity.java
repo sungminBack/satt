@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.design.widget.TabLayout;
@@ -18,6 +20,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ViewFlipper;
 
 import com.satt.mjbus.Help.ViewPagerActivity;
+import com.satt.mjbus.R;
 import com.satt.mjbus.Timetable.TimeTableActivity;
 import com.tsengvn.typekit.TypekitContextWrapper;
 
@@ -36,6 +39,8 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(com.satt.mjbus.R.layout.activity_tab_layout_demo);
+
+
         //팁
         flipper = (ViewFlipper)findViewById(com.satt.mjbus.R.id.flipper);
         flipper.startFlipping();
@@ -52,13 +57,12 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
 
         fabMain = (FloatingActionButton)findViewById(com.satt.mjbus.R.id.fabMain);
         fabTime = (FloatingActionButton)findViewById(com.satt.mjbus.R.id.fabTime);
-        fabBus = (FloatingActionButton)findViewById(com.satt.mjbus.R.id.fabBus);
         fabQue = (FloatingActionButton)findViewById(com.satt.mjbus.R.id.fabQue);
 
         fabMain.setOnClickListener(clickListener);
         fabQue.setOnClickListener(clickListener);
         fabTime.setOnClickListener(clickListener);
-        fabBus.setOnClickListener(clickListener);
+        //fabBus.setOnClickListener(clickListener);
 
 
 
@@ -66,13 +70,12 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
 
+
         TabLayout tabLayout =
                 (TabLayout) findViewById(com.satt.mjbus.R.id.tab_layout);
 
         tabLayout.addTab(tabLayout.newTab().setText("진입로 셔틀버스"));
         tabLayout.addTab(tabLayout.newTab().setText("시내 셔틀버스"));
-       // final View tabView = LayoutInflater.from(this).inflate(R.layout.view_custom_tab, null, false);
-       // tabLayout.addTab(tabLayout.newTab().setCustomView(tabView));
 
         final ViewPager viewPager =
                 (ViewPager) findViewById(com.satt.mjbus.R.id.pager);
@@ -113,18 +116,18 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
             switch (v.getId()) {
                 case com.satt.mjbus.R.id.fabMain :
                     if (!isOpen) {
-                        fabBus.startAnimation(FabOpen);
+                      //  fabBus.startAnimation(FabOpen);
                         fabQue.startAnimation(FabOpen);
                         fabTime.startAnimation(FabOpen);
 
                         fabMain.startAnimation(FabRClockwise);
 
-                        fabBus.setClickable(true);
+                    //    fabBus.setClickable(true);
                         fabQue.setClickable(true);
                         fabTime.setClickable(true);
                         isOpen = true;
                     } else {
-                        fabBus.startAnimation(FabClose);
+                      //  fabBus.startAnimation(FabClose);
                         fabQue.startAnimation(FabClose);
                         fabTime.startAnimation(FabClose);
 
@@ -141,10 +144,13 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
             switch (v.getId()){
                 case com.satt.mjbus.R.id.fabQue:
                     Intent intent = new Intent(getApplicationContext(),ViewPagerActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
+                    break;
 
                 case com.satt.mjbus.R.id.fabTime:
                     Intent intent2 = new Intent(getApplicationContext(), TimeTableActivity.class);
+                    intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent2);
 
 
@@ -159,20 +165,18 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
+  /*  @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
+        int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == com.satt.mjbus.R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
-    }
+    }*/
+
+    //폰트적용
     @Override
     protected void attachBaseContext(Context newBase) {
 

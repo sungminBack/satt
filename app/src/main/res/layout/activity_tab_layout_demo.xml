@@ -29,17 +29,6 @@
         android:elevation="6dp"
         android:visibility="invisible"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabBus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/bus"
-        app:backgroundTint="#BDBDBD"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="156dp"
-        android:elevation="6dp"
-        android:visibility="invisible"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabTime"
@@ -49,14 +38,14 @@
         app:backgroundTint="#BDBDBD"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="16dp"
-        android:layout_marginRight="226dp"
+        android:layout_marginRight="156dp"
         android:elevation="6dp"
         android:visibility="invisible"/>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/more"
+        android:src="@drawable/bus"
         app:backgroundTint="#BDBDBD"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="16dp"
@@ -101,7 +90,7 @@
                 android:layout_weight="1"
                 android:text="정류장에서 한줄로 서주세요"
                 android:textAlignment="center"
-                android:textColor="#FFCC00"
+                android:textColor="@color/colorPrimary"
                 app:font="custom1"
                 android:layout_gravity="center" />
 
@@ -112,7 +101,7 @@
                 android:id="@+id/img02"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="#990000"
+                android:textColor="@color/colorPrimary"
                 app:font="custom1"
                 android:layout_gravity="center" />
 

@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.satt.mjbus.R;
+
 public class CustomAdapter extends PagerAdapter {
 
     LayoutInflater inflater;
@@ -32,7 +34,7 @@ public class CustomAdapter extends PagerAdapter {
 
         ImageView img = (ImageView)view.findViewById(com.satt.mjbus.R.id.img_viewpager_childimage);
 
-        img.setImageResource(com.satt.mjbus.R.drawable.image01+position);
+        img.setImageResource(R.drawable.help_img03+position);
 
         container.addView(view);
 
