@@ -6,6 +6,7 @@ package com.satt.mjbus.Route;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,9 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.satt.mjbus.R;
 
 import java.util.ArrayList;
 
@@ -59,9 +63,9 @@ public class ListViewAdapter extends BaseAdapter {
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
         ImageView iconImageView = (ImageView) convertView.findViewById(com.satt.mjbus.R.id.imageView1) ;
         ImageView lineImageView = (ImageView) convertView.findViewById(com.satt.mjbus.R.id.imageView2) ;
-       // if() {
-       //     iconImageView.setImageDrawable(R.drawable.ic_bus);
-       // }
+        // if() {
+        //     iconImageView.setImageDrawable(R.drawable.ic_bus);
+        // }
         TextView titleTextView = (TextView) convertView.findViewById(com.satt.mjbus.R.id.textView1) ;
         TextView descTextView = (TextView) convertView.findViewById(com.satt.mjbus.R.id.textView2) ;
 
@@ -70,8 +74,9 @@ public class ListViewAdapter extends BaseAdapter {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  Toast.makeText(context,listViewItemList.get(position),Toast.LENGTH_SHORT).show();
-                System.out.println("$$$$$$$$$$$$$$$"+pos);
+               // Toast.makeText(context,listViewItemList.get(pos),Toast.LENGTH_SHORT).show();
+               // System.out.println("$$$$$$$$$$$$$$$"+pos);
+
             }
         });
         btn.setFocusable(false);
