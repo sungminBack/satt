@@ -43,6 +43,6 @@ public class Constants {
     public static double first_Gong_Lon = 127.186729;
 
     public enum EBusState {Up, Down}
-    public enum ERoadState {Enter, Downtown}
+
 
 }

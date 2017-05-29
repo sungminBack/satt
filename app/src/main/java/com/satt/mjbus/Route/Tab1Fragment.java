@@ -10,8 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.ViewFlipper;
-
 import com.satt.mjbus.Map.GmapActivity;
 
 import static com.satt.mjbus.R.id.listview1;
@@ -23,7 +21,8 @@ import static com.satt.mjbus.R.id.listview1;
  */
 public class Tab1Fragment extends Fragment{
 
-    ViewFlipper flipper;
+
+
 
     public Tab1Fragment() {
 
@@ -58,9 +57,10 @@ public class Tab1Fragment extends Fragment{
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(getActivity(),GmapActivity.class);
+                intent.putExtra("RoadState","Enter");
                 startActivity(intent);
 
             }
@@ -68,5 +68,6 @@ public class Tab1Fragment extends Fragment{
 
         return view;
     }
+
 
 }

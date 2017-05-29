@@ -52,12 +52,15 @@ public class Tab2Fragment extends Fragment {
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.empty),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"제 3공학관"," ");
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.empty),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),""," ");
 
+
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(getActivity(),GmapActivity.class);
+                intent.putExtra("RoadState", "Downtown");
                 startActivity(intent);
+
 
             }
         });

@@ -42,31 +42,44 @@ public class GmapActivity extends Activity implements OnMapReadyCallback {
     public static final LatLng park_Station = new LatLng(Constants.park_Station_Lat, Constants.park_Station_Lon);
     public static final LatLng first_Gong = new LatLng(Constants.first_Gong_Lat, Constants.first_Gong_Lon);
 
+    public Marker pre_Marker;
+    public GoogleMap googleMap;
 
-
-
-   public GoogleMap googleMap;
+    private String roadState;
 
     @Override
     public void onMapReady(GoogleMap map){
         googleMap = map;
+        roadState = getIntent().getExtras().getString("RoadState");
 
-        googleMap.addMarker(new MarkerOptions().position(chapel_Gwan));
-        googleMap.addMarker(new MarkerOptions().position(e_Mart_Down));
-        googleMap.addMarker(new MarkerOptions().position(enter_Down));
-        googleMap.addMarker(new MarkerOptions().position(mj_Station));
-        googleMap.addMarker(new MarkerOptions().position(enter_Up));
-        googleMap.addMarker(new MarkerOptions().position(e_Mart_Up));
-        googleMap.addMarker(new MarkerOptions().position(myong_Jin));
-        googleMap.addMarker(new MarkerOptions().position(third_Gong));
-        googleMap.addMarker(new MarkerOptions().position(center_police));
-        googleMap.addMarker(new MarkerOptions().position(missha));
-        googleMap.addMarker(new MarkerOptions().position(park_Station));
-        googleMap.addMarker(new MarkerOptions().position(first_Gong));
 
-        m1 = googleMap.addMarker(new MarkerOptions().position(missha));
+        if(roadState != null && roadState.equals("Enter")){
+            googleMap.addMarker(new MarkerOptions().position(chapel_Gwan));
+            googleMap.addMarker(new MarkerOptions().position(e_Mart_Down));
+            googleMap.addMarker(new MarkerOptions().position(enter_Down));
+            googleMap.addMarker(new MarkerOptions().position(mj_Station));
+            googleMap.addMarker(new MarkerOptions().position(enter_Up));
+            googleMap.addMarker(new MarkerOptions().position(e_Mart_Up));
+            googleMap.addMarker(new MarkerOptions().position(myong_Jin));
+            googleMap.addMarker(new MarkerOptions().position(third_Gong));
+        }
+        else if(roadState != null && roadState.equals("Downtown")){
+            googleMap.addMarker(new MarkerOptions().position(chapel_Gwan));
+            googleMap.addMarker(new MarkerOptions().position(e_Mart_Down));
+            googleMap.addMarker(new MarkerOptions().position(enter_Down));
+            googleMap.addMarker(new MarkerOptions().position(center_police));
+            googleMap.addMarker(new MarkerOptions().position(missha));
+            googleMap.addMarker(new MarkerOptions().position(park_Station));
+            googleMap.addMarker(new MarkerOptions().position(first_Gong));
+            googleMap.addMarker(new MarkerOptions().position(third_Gong));
+        }
+
+
+
+
+        pre_Marker = googleMap.addMarker(new MarkerOptions().position(chapel_Gwan));
         receiver = new Gps_Receiver();
-        receiver.getData(Constants.url, googleMap, m1);
+        receiver.getData(Constants.url, googleMap);
     }
 
     @Override
@@ -82,9 +95,10 @@ public class GmapActivity extends Activity implements OnMapReadyCallback {
 
             @Override
             public void onClick(View v) {
-
-                receiver.getData(Constants.url, googleMap, m1);
-
+                pre_Marker.remove();
+                receiver.getData(Constants.url, googleMap);
+                pre_Marker = receiver.Get_Marker();
+                pre_Marker.remove();
 
             }
         });

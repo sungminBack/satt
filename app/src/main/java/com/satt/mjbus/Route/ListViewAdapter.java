@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-
 public class ListViewAdapter extends BaseAdapter {
 
     // Adapter에 추가된 데이터를 저장하기 위한 ArrayList
@@ -25,7 +24,6 @@ public class ListViewAdapter extends BaseAdapter {
     // ListViewAdapter의 생성자
     public ListViewAdapter() {
     }
-
 
     // Adapter에 사용되는 데이터의 개수를 리턴. : 필수 구현
     @Override
@@ -81,8 +79,8 @@ public class ListViewAdapter extends BaseAdapter {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Toast.makeText(context,listViewItemList.get(pos),Toast.LENGTH_SHORT).show();
-                // System.out.println("$$$$$$$$$$$$$$$"+pos);
+               // Toast.makeText(context,listViewItemList.get(pos),Toast.LENGTH_SHORT).show();
+               // System.out.println("$$$$$$$$$$$$$$$"+pos);
 
             }
         });
