@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.satt.mjbus.Map.GmapActivity;
+import com.satt.mjbus.R;
 
 import static com.satt.mjbus.R.id.listview2;
 
@@ -39,17 +40,18 @@ public class Tab2Fragment extends Fragment {
         //Adapter 생성
         adapter = new ListViewAdapter();
         listview.setAdapter(adapter);
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"버스관리사무소(기점)"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"이마트 앞(시내 방면)"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"진입로(시내 방면)"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"동부경찰서 중앙지구대 버스정류장","잠시후 도착 예정");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"롯데시네마 뚜레주르"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"중앙공영주차장"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"진입로(학교 방면)"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"이마트 앞(학교 방면)"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"제 1공학관"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"제 3공학관"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),""," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.empty),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"버스관리사무소(기점)"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.empty),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"이마트 앞(시내 방면)"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.empty),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"진입로(시내 방면)"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.empty),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"동부경찰서 중앙지구대 버스정류장"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.empty),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"롯데시네마 뚜레주르"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.empty),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"중앙공영주차장"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.empty),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"진입로(학교 방면)"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.empty),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"이마트 앞(학교 방면)"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.empty),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"제 1공학관"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.empty),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"제 3공학관"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.empty),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),""," ");
+
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

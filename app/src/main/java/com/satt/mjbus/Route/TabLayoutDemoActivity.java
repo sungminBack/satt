@@ -1,14 +1,10 @@
 package com.satt.mjbus.Route;
 
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -18,12 +14,9 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.satt.mjbus.Help.ViewPagerActivity;
-import com.satt.mjbus.R;
 import com.satt.mjbus.Timetable.TimeTableActivity;
 import com.tsengvn.typekit.TypekitContextWrapper;
 
@@ -34,10 +27,6 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
     private FloatingActionButton fabMain, fabQue, fabBus, fabTime;
     boolean isOpen = false;
 
-    //notification 변수
-   // private NotificationManager notificationManager;
-    //private NotificationCompat.Builder builder;
-
     //팁변수
     ViewFlipper flipper;
 
@@ -46,34 +35,6 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(com.satt.mjbus.R.layout.activity_tab_layout_demo);
-
-        //notification
-      /*  Button button = (Button)findViewById(R.id.alarm_Btn);
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                notificationManager = (NotificationManager)TabLayoutDemoActivity.this.getSystemService(TabLayoutDemoActivity.this.NOTIFICATION_SERVICE);
-
-                if (notificationManager != null){
-                    notificationManager.cancel(0);
-                }
-
-                builder = new NotificationCompat.Builder(getApplicationContext());
-
-                builder.setContentTitle(getResources().getString(R.string.app_name))
-                        .setContentText("NotificationText")
-                        .setTicker("NotificationCompat")
-                        .setSmallIcon(R.drawable.bus);
-
-                Intent intent1 = new Intent(TabLayoutDemoActivity.this.getApplicationContext(),TabLayoutDemoActivity.class);
-
-                PendingIntent pendingNotificationIntent = PendingIntent.getActivity(TabLayoutDemoActivity.this,0, intent1,PendingIntent.FLAG_UPDATE_CURRENT);
-                //PendingIntent는 일회용 인텐트 같은 개념입니다.
-
-                notificationManager.notify(1,builder.build());
-
-            }
-        });*/
 
         //팁
         flipper = (ViewFlipper)findViewById(com.satt.mjbus.R.id.flipper);
@@ -141,7 +102,6 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
 
     }
 
-
     View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -196,17 +156,6 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
         getMenuInflater().inflate(com.satt.mjbus.R.menu.menu_tab_layout_demo, menu);
         return true;
     }
-
-  /*  @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
-        if (id == com.satt.mjbus.R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
 
     //폰트적용
     @Override

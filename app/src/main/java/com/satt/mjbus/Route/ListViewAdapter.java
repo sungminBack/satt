@@ -6,7 +6,6 @@ package com.satt.mjbus.Route;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +13,9 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.satt.mjbus.R;
 
 import java.util.ArrayList;
+
 
 public class ListViewAdapter extends BaseAdapter {
 
@@ -28,6 +25,7 @@ public class ListViewAdapter extends BaseAdapter {
     // ListViewAdapter의 생성자
     public ListViewAdapter() {
     }
+
 
     // Adapter에 사용되는 데이터의 개수를 리턴. : 필수 구현
     @Override
@@ -61,13 +59,22 @@ public class ListViewAdapter extends BaseAdapter {
         // 서버요청 <------------------------------
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
-        ImageView iconImageView = (ImageView) convertView.findViewById(com.satt.mjbus.R.id.imageView1) ;
+        final ImageView iconImageView = (ImageView) convertView.findViewById(com.satt.mjbus.R.id.imageView1) ;
         ImageView lineImageView = (ImageView) convertView.findViewById(com.satt.mjbus.R.id.imageView2) ;
-        // if() {
-        //     iconImageView.setImageDrawable(R.drawable.ic_bus);
-        // }
+
+
         TextView titleTextView = (TextView) convertView.findViewById(com.satt.mjbus.R.id.textView1) ;
         TextView descTextView = (TextView) convertView.findViewById(com.satt.mjbus.R.id.textView2) ;
+
+        //버스아이콘 전체 안보이게
+        iconImageView.setVisibility(View.INVISIBLE);
+        descTextView.setVisibility(View.INVISIBLE);
+
+        //리스트위치1일때 아이콘 보이게
+        if(pos==1){
+            iconImageView.setVisibility(View.VISIBLE);
+            descTextView.setVisibility(View.VISIBLE);
+        }
 
         //버튼을 클릭했을 때 이벤트 발생
         Button btn = (Button)convertView.findViewById(com.satt.mjbus.R.id.button);
