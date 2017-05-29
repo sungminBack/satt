@@ -5,12 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -20,7 +17,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.ViewFlipper;
 
 import com.satt.mjbus.Help.ViewPagerActivity;
-import com.satt.mjbus.R;
 import com.satt.mjbus.Timetable.TimeTableActivity;
 import com.tsengvn.typekit.TypekitContextWrapper;
 
@@ -39,7 +35,6 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(com.satt.mjbus.R.layout.activity_tab_layout_demo);
-
 
         //팁
         flipper = (ViewFlipper)findViewById(com.satt.mjbus.R.id.flipper);
@@ -105,9 +100,6 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
                    }
         });
 
-
-
-
     }
 
     View.OnClickListener clickListener = new View.OnClickListener() {
@@ -164,17 +156,6 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
         getMenuInflater().inflate(com.satt.mjbus.R.menu.menu_tab_layout_demo, menu);
         return true;
     }
-
-  /*  @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
-        if (id == com.satt.mjbus.R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
 
     //폰트적용
     @Override
