@@ -45,14 +45,14 @@ public class Tab1Fragment extends Fragment{
         //Adapter 생성
         adapter = new ListViewAdapter();
         listview.setAdapter(adapter);
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"버스관리사무소(기점)"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"이마트 앞(경전철 방면)"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"진입로(경전철 방면)"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"버스관리사무소(기점)","잠시후 도착 예정");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"이마트 앞(경전철 방면)","잠시후 도착 예정");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"진입로(경전철 방면)","잠시후 도착 예정");
         adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"명지대역","잠시후 도착 예정");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"진입로(학교 방면)"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"이마트 앞(학교 방면)"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"명진당"," ");
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"3공학관"," ");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"진입로(학교 방면)","잠시후 도착 예정");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"이마트 앞(학교 방면)","잠시후 도착 예정");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"명진당","잠시후 도착 예정");
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),"3공학관","잠시후 도착 예정");
         adapter.addItem(ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.ic_bus_gray),ContextCompat.getDrawable(getActivity(), com.satt.mjbus.R.drawable.bus_line2),""," ");
 
 
