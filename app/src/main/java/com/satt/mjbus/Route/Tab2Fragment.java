@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.satt.mjbus.Constants.Constants;
 import com.satt.mjbus.Map.GmapActivity;
 
 import static com.satt.mjbus.R.id.listview2;
