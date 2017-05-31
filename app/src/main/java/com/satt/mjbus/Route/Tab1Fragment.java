@@ -38,7 +38,7 @@ public class Tab1Fragment extends Fragment{
 
 
         final ListView listview;
-        ListViewAdapter adapter;
+        final ListViewAdapter adapter;
         listview = (ListView) view.findViewById(listview1);
 
         //Adapter 생성
@@ -68,6 +68,4 @@ public class Tab1Fragment extends Fragment{
 
         return view;
     }
-
-
 }

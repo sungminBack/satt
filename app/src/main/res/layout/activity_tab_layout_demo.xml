@@ -88,14 +88,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="정류장에서 한줄로 서주세요"
+                android:text="정류장에서는 한줄로 서주세요"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 app:font="custom1"
                 android:layout_gravity="center" />
 
             <TextView
-                android:text="빨간버스 타세요"
+                android:text="줄이 길땐 광역 버스 타세요"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img02"
@@ -106,7 +106,7 @@
                 android:layout_gravity="center" />
 
             <TextView
-                android:text="10시에는 명지대역에서타세요"
+                android:text="버스 기사님에게 인사 해주세요"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img03"
@@ -135,7 +135,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_refresh_black_24dp"
-
+        app:backgroundTint="#BDBDBD"
         android:layout_gravity="bottom|start"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
