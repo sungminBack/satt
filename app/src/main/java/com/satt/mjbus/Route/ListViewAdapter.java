@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -144,13 +145,31 @@ public class ListViewAdapter extends BaseAdapter {
         }
 
         //버튼을 클릭했을 때 이벤트 발생
-        Button btn = (Button)convertView.findViewById(com.satt.mjbus.R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
+        final ImageButton btn = (ImageButton)convertView.findViewById(com.satt.mjbus.R.id.button);
+      /*  btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                // Toast.makeText(context,listViewItemList.get(pos),Toast.LENGTH_SHORT).show();
                // System.out.println("$$$$$$$$$$$$$$$"+pos);
 
+            }
+        });*/
+        btn.setTag(position);
+        btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                int poss = (Integer)v.getTag();
+                int check_num = 0;
+                btn.setSelected(true);
+               System.out.println("$$$$$$$$$$$$$$$"+pos);
+               if(check_num ==0){
+                    btn.setSelected(true);
+                    check_num = 1;
+                }else {
+                    btn.setSelected(false);
+                    check_num = 0;
+                }
             }
         });
         btn.setFocusable(false);

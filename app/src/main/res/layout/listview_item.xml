@@ -69,7 +69,7 @@
         android:layout_height="match_parent"
         android:layout_weight="0.2">
 
-        <Button
+        <ImageButton
             android:layout_marginTop="20dp"
             android:background="@drawable/bt_click"
             android:layout_width="40dp"
