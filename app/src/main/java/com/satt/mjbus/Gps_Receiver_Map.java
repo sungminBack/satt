@@ -19,11 +19,12 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 import java.util.Vector;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by dlgow on 2017-05-22.
  */
-public class Gps_Receiver{
+public class Gps_Receiver_Map {
     String myJSON;
     public GoogleMap googleMap;
 
@@ -34,19 +35,12 @@ public class Gps_Receiver{
 
     double Latitude;
     double Longitude;
-    Vector<Marker> markers = new Vector<Marker>();
+
 
     private Marker bus_Marker;
 
     JSONArray gps = null;
 
-    public double Get_Latitude(){
-        return Latitude;
-    }
-
-    public double Get_Longitude(){
-        return Longitude;
-    }
 
 
 
@@ -128,6 +122,12 @@ public class Gps_Receiver{
             }
         }
         GetDataJSON g = new GetDataJSON();
-        g.execute(url);
+        try {
+            g.execute(url).get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 }

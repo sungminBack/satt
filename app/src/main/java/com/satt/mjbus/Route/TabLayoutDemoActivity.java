@@ -17,6 +17,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ViewFlipper;
 
 import com.satt.mjbus.Help.ViewPagerActivity;
+import com.satt.mjbus.R;
 import com.satt.mjbus.Timetable.TimeTableActivity;
 import com.tsengvn.typekit.TypekitContextWrapper;
 
@@ -24,7 +25,7 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
 
     //플롯팅버튼 변수
     Animation FabOpen, FabClose, FabRClockwise, FabRanticlockWise;
-    private FloatingActionButton fabMain, fabQue, fabBus, fabTime;
+    private FloatingActionButton fabMain, fabQue, fabBus, fabTime,refreshBtn;
     boolean isOpen = false;
 
     //팁변수
@@ -32,6 +33,7 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ListViewAdapter listViewAdapter = new ListViewAdapter();
 
         super.onCreate(savedInstanceState);
         setContentView(com.satt.mjbus.R.layout.activity_tab_layout_demo);
@@ -58,8 +60,17 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
         fabQue.setOnClickListener(clickListener);
         fabTime.setOnClickListener(clickListener);
         //fabBus.setOnClickListener(clickListener);
+        refreshBtn = (FloatingActionButton)findViewById(R.id.refreshBtn);
+        refreshBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                Intent intent = new Intent(TabLayoutDemoActivity.this, TabLayoutDemoActivity.class);
 
+                startActivity(intent);
 
+            }
+        });
 
         Toolbar toolbar = (Toolbar) findViewById(com.satt.mjbus.R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -77,6 +88,7 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
         final PagerAdapter adapter = new TabPagerAdapter
                 (getSupportFragmentManager(),
                         tabLayout.getTabCount());
+
         viewPager.setAdapter(adapter);
 
         viewPager.addOnPageChangeListener(new
@@ -156,6 +168,9 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
         getMenuInflater().inflate(com.satt.mjbus.R.menu.menu_tab_layout_demo, menu);
         return true;
     }
+
+
+
 
     //폰트적용
     @Override

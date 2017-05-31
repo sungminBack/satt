@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -16,7 +15,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.satt.mjbus.Constants.Constants;
-import com.satt.mjbus.Gps_Receiver;
+import com.satt.mjbus.Gps_Receiver_Map;
 import com.satt.mjbus.R;
 
 /**
@@ -24,7 +23,7 @@ import com.satt.mjbus.R;
  */
 
 public class GmapActivity extends Activity implements OnMapReadyCallback {
-    public Gps_Receiver receiver;
+    public Gps_Receiver_Map receiver;
     public FloatingActionButton refreshBtn;
     private double Latitude;
     private double Longitude;
@@ -46,6 +45,10 @@ public class GmapActivity extends Activity implements OnMapReadyCallback {
     public GoogleMap googleMap;
 
     private String roadState;
+
+    public void set_latitude(double lat){
+
+    }
 
     @Override
     public void onMapReady(GoogleMap map){
@@ -78,7 +81,7 @@ public class GmapActivity extends Activity implements OnMapReadyCallback {
 
 
         pre_Marker = googleMap.addMarker(new MarkerOptions().position(chapel_Gwan));
-        receiver = new Gps_Receiver();
+        receiver = new Gps_Receiver_Map();
         receiver.getData(Constants.url, googleMap);
     }
 

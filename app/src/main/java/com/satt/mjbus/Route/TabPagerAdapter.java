@@ -19,6 +19,7 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             case 0:
                 Tab1Fragment tab1 = new Tab1Fragment();
+
                 return tab1;
             case 1:
                 Tab2Fragment tab2 = new Tab2Fragment();

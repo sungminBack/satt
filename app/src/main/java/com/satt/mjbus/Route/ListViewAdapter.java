@@ -6,6 +6,7 @@ package com.satt.mjbus.Route;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +15,38 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.satt.mjbus.Constants.Constants;
+import com.satt.mjbus.Constants.Constants.EBusState;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
 public class ListViewAdapter extends BaseAdapter {
+    String myJSON;
+    private static final String TAG_RESULT = "result";
+    private static final String TAG_LATITUDE = "Latitude";
+    private static final String TAG_LONGITUDE = "Longitude";
+
+    double Latitude;
+    double Longitude;
+    public EBusState eState = EBusState.Down;
+    JSONArray gps = null;
+
+
 
     // Adapter에 추가된 데이터를 저장하기 위한 ArrayList
     private ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>() ;
 
     // ListViewAdapter의 생성자
     public ListViewAdapter() {
+        getData("http://117.17.158.240/test/GpsSender.php");
     }
 
     // Adapter에 사용되는 데이터의 개수를 리턴. : 필수 구현
@@ -56,6 +80,9 @@ public class ListViewAdapter extends BaseAdapter {
 
         // 서버요청 <------------------------------
 
+
+
+
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
         final ImageView iconImageView = (ImageView) convertView.findViewById(com.satt.mjbus.R.id.imageView1) ;
         ImageView lineImageView = (ImageView) convertView.findViewById(com.satt.mjbus.R.id.imageView2) ;
@@ -69,9 +96,51 @@ public class ListViewAdapter extends BaseAdapter {
         descTextView.setVisibility(View.INVISIBLE);
 
         //리스트위치1일때 아이콘 보이게
-        if(pos==1){
-            iconImageView.setVisibility(View.VISIBLE);
-            descTextView.setVisibility(View.VISIBLE);
+
+
+        if(Latitude > 37.224000 && Latitude < 37.224400 && eState.equals(Constants.EBusState.Down)){
+            if( pos == 0 ){
+                iconImageView.setVisibility(View.VISIBLE);
+                descTextView.setVisibility(View.VISIBLE);
+            }
+        }else if(Latitude > 37.224100 && Latitude < 37.231600 && eState.equals(Constants.EBusState.Down)){
+            if( pos == 1 ){
+                iconImageView.setVisibility(View.VISIBLE);
+                descTextView.setVisibility(View.VISIBLE);
+            }
+        }else if(Latitude > 37.231600 && Latitude < 37.234000 && eState.equals(Constants.EBusState.Down)){
+            if( pos == 2 ){
+                iconImageView.setVisibility(View.VISIBLE);
+                descTextView.setVisibility(View.VISIBLE);
+            }
+        }else if(Latitude > 37.234000 && Latitude < 37.238400 && eState.equals(Constants.EBusState.Down)){
+            if( pos == 3 ){
+                iconImageView.setVisibility(View.VISIBLE);
+                descTextView.setVisibility(View.VISIBLE);
+                eState = Constants.EBusState.Up;
+            }
+        }else if(Latitude > 37.234000 && Latitude < 37.238400 && eState.equals(Constants.EBusState.Up)){
+            if( pos ==4 ){
+                iconImageView.setVisibility(View.VISIBLE);
+                descTextView.setVisibility(View.VISIBLE);
+            }
+        }else if(Latitude > 37.231600 && Latitude < 37.234000 && eState.equals(Constants.EBusState.Up)){
+            if( pos == 5 ){
+                iconImageView.setVisibility(View.VISIBLE);
+                descTextView.setVisibility(View.VISIBLE);
+            }
+        }else if(Latitude > 37.222200 && Latitude < 37.231600 && eState.equals(Constants.EBusState.Up)){
+            if( pos == 6 ){
+                iconImageView.setVisibility(View.VISIBLE);
+                descTextView.setVisibility(View.VISIBLE);
+                eState = Constants.EBusState.Down;
+            }
+        }else if(Latitude > 37.219400 && Latitude < 37.222200 ){
+            if( pos == 7 ){
+                iconImageView.setVisibility(View.VISIBLE);
+                descTextView.setVisibility(View.VISIBLE);
+                eState = Constants.EBusState.Down;
+            }
         }
 
         //버튼을 클릭했을 때 이벤트 발생
@@ -110,5 +179,78 @@ public class ListViewAdapter extends BaseAdapter {
 
         listViewItemList.add(item);
     }
+
+
+
+
+
+    public void getData(String url){
+
+
+        class GetDataJSON extends AsyncTask<String, Void, String> {
+
+            @Override
+            protected String doInBackground(String... params) {
+                String uri = params[0];
+                BufferedReader bufferedReader = null;
+                try{
+                    URL url = new URL(uri);
+                    URLConnection con = (URLConnection)url.openConnection();
+                    StringBuilder sb = new StringBuilder();
+                    con.setDoInput(true);
+                    bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                    String json;
+
+                    while((json = bufferedReader.readLine())!=null){
+                        System.out.print(json);
+                        sb.append(json + "\n");
+                    }
+
+                    return sb.toString().trim();
+
+
+
+                }catch (Exception e){
+                    //return null;
+                    e.printStackTrace();
+                    return "";
+                }
+
+            }
+
+            @Override
+            protected void onPostExecute(String result){
+                myJSON = result;
+
+                showList(myJSON);
+
+
+            }
+        }
+        GetDataJSON g = new GetDataJSON();
+        g.execute(url);
+    }
+
+
+    protected void showList(String s){
+        try{
+            JSONObject jsonObject = new JSONObject(s);
+            gps = jsonObject.getJSONArray(TAG_RESULT);
+            JSONObject c = gps.getJSONObject(0);
+            String strLat = c.getString(TAG_LATITUDE);
+            String strLon = c.getString(TAG_LONGITUDE);
+
+
+
+            Latitude = Double.parseDouble(strLat);
+            Longitude = Double.parseDouble(strLon);
+
+
+        }catch(JSONException e){
+            e.printStackTrace();
+        }
+    }
+
 }
 
