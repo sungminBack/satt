@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.satt.mjbus.Constants.Constants;
 import com.satt.mjbus.Constants.Constants.EBusState;
@@ -160,15 +161,7 @@ public class ListViewAdapter extends BaseAdapter {
             }
         }
         //버튼을 클릭했을 때 이벤트 발생
-        final ImageButton btn = (ImageButton)convertView.findViewById(com.satt.mjbus.R.id.button);
-      /*  btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // Toast.makeText(context,listViewItemList.get(pos),Toast.LENGTH_SHORT).show();
-               // System.out.println("$$$$$$$$$$$$$$$"+pos);
-
-            }
-        });*/
+        final ToggleButton btn = (ToggleButton)convertView.findViewById(com.satt.mjbus.R.id.button);
         btn.setTag(position);
         btn.setOnClickListener(new View.OnClickListener() {
 
@@ -176,25 +169,17 @@ public class ListViewAdapter extends BaseAdapter {
             public void onClick(View v) {
 
                 int poss = (Integer)v.getTag();
-                int check_num = 0;
-                btn.setSelected(true);
-                Thread t = new Thread(new PushThread(context,poss, eState));
-
-                System.out.println("$$$$$$$$$$$$$$$"+pos);
-               if(check_num ==0){
-                    btn.setSelected(true);
-                    check_num = 1;
-                    t.start();
-                }else {
-                    btn.setSelected(false);
-                    check_num = 0;
-                    t.interrupt();
+               // Thread t = new Thread(new PushThread(context,poss, eState));
+                if(btn.isChecked()){
+                    btn.setBackgroundDrawable(
+                            context.getResources().getDrawable(R.drawable.bt_alarm_on)
+                            );
+                }else{
+                    btn.setBackgroundDrawable(
+                            context.getResources().getDrawable(R.drawable.bt_alarm_off)
+                            );
                 }
-
-
             }
-
-
         });
         btn.setFocusable(false);
 

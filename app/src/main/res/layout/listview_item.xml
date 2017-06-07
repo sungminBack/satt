@@ -69,13 +69,15 @@
         android:layout_height="match_parent"
         android:layout_weight="0.2">
 
-        <ImageButton
+        <ToggleButton
             android:layout_marginTop="10dp"
-            android:background="@drawable/bt_click"
+            android:background="@drawable/bt_alarm_off"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:id="@+id/button"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:textOn =""
+            android:textOff=""/>
 
     </LinearLayout>
 
