@@ -167,19 +167,23 @@ public class ListViewAdapter extends BaseAdapter {
 
             @Override
             public void onClick(View v) {
+
                 int poss = (Integer)v.getTag();
                 int check_num = 0;
                 btn.setSelected(true);
-               System.out.println("$$$$$$$$$$$$$$$"+pos);
+                Thread t = new Thread(new PushThread(context,poss, eState));
+
+                System.out.println("$$$$$$$$$$$$$$$"+pos);
                if(check_num ==0){
                     btn.setSelected(true);
                     check_num = 1;
+                    t.start();
                 }else {
                     btn.setSelected(false);
                     check_num = 0;
+                    t.interrupt();
                 }
-                Thread t = new Thread(new PushThread(context,poss, eState));
-                t.start();
+
 
             }
 

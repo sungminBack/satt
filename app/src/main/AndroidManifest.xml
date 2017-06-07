@@ -47,14 +47,14 @@
             android:launchMode="singleTop">
 
         </activity>
-        <service android:name=".NotificationService"
-            android:enabled="true"/>
-        <receiver android:name=".NotificationReceiver"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBgtLXDMRqGRXOGJgYNQ0tYgbdyCAhCqkI"/>
     </application>
+    <service android:name=".NotificationService"
+        android:enabled="true"/>
+    <receiver android:name=".NotificationReceiver"/>
 
 
 </manifest>

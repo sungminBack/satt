@@ -163,10 +163,6 @@ public class Gps_Receiver_Push {
                     break;
             }
 
-
-
-
-
         }catch(JSONException e){
             e.printStackTrace();
         }
@@ -182,11 +178,10 @@ public class Gps_Receiver_Push {
         PendingIntent pendingNotificationIntent = PendingIntent.getActivity(context, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
 
         builder.setSmallIcon(R.drawable.bus)
-                .setTicker("HETT")
+                .setTicker("버스가 도착 예정입니다.")
                 .setWhen(System.currentTimeMillis())
-                .setNumber(1)
-                .setContentTitle("푸쉬 제목")
-                .setContentText("푸쉬내용")
+                .setContentTitle("도착 예정 알림")
+                .setContentText("버스가 도착 예정입니다.")
                 .setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE)
                 .setContentIntent(pendingNotificationIntent)
                 .setAutoCancel(true)
