@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 import com.google.android.gms.auth.GoogleAuthException;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -39,6 +41,7 @@ public class Gps_Receiver_Map {
 
     private Marker bus_Marker;
 
+
     JSONArray gps = null;
 
 
@@ -64,8 +67,10 @@ public class Gps_Receiver_Map {
 
                     bus_Position = new LatLng(Latitude, Longitude);
 
+                    BitmapDescriptor icon = BitmapDescriptorFactory.fromResource(R.drawable.bus);
 
-                    bus_Marker = googleMap.addMarker(new MarkerOptions().position(bus_Position));
+                    bus_Marker = googleMap.addMarker(new MarkerOptions().position(bus_Position).icon(icon));
+
 
                     googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(bus_Position,16));
 
