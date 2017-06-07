@@ -4,7 +4,11 @@ package com.satt.mjbus.Route;
  * Created by hn012 on 2017-04-13.
  */
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
@@ -18,6 +22,8 @@ import android.widget.TextView;
 
 import com.satt.mjbus.Constants.Constants;
 import com.satt.mjbus.Constants.Constants.EBusState;
+import com.satt.mjbus.PushThread;
+import com.satt.mjbus.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +43,7 @@ public class ListViewAdapter extends BaseAdapter {
 
     double Latitude;
     double Longitude;
+
     public EBusState eState = EBusState.Down;
     JSONArray gps = null;
 
@@ -99,38 +106,39 @@ public class ListViewAdapter extends BaseAdapter {
         //리스트위치1일때 아이콘 보이게
 
 
-        if(Latitude > 37.224000 && Latitude < 37.224400 && eState.equals(Constants.EBusState.Down)){
+        if(Latitude > 37.223344 && Latitude < 37.224647 && Longitude > 127.185406 && Longitude < 127.188389 && eState.equals(Constants.EBusState.Down)){
             if( pos == 0 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
             }
-        }else if(Latitude > 37.224100 && Latitude < 37.231600 && eState.equals(Constants.EBusState.Down)){
+        }else if(Latitude > 37.224650 && Latitude < 37.231973 && Longitude > 127.185514 && Longitude < 127.189827 && eState.equals(Constants.EBusState.Down)){
             if( pos == 1 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
             }
-        }else if(Latitude > 37.231600 && Latitude < 37.234000 && eState.equals(Constants.EBusState.Down)){
+        }else if(Latitude > 37.232000 && Latitude < 37.234106 && Longitude > 127.185514 && Longitude < 127.189767 && eState.equals(Constants.EBusState.Down)){
             if( pos == 2 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
             }
-        }else if(Latitude > 37.234000 && Latitude < 37.238400 && eState.equals(Constants.EBusState.Down)){
+        }else if(Latitude > 37.234110 && Latitude < 37.238209 && Longitude > 127.187995 && Longitude < 127.190728 && eState.equals(Constants.EBusState.Down)){
             if( pos == 3 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
                 eState = Constants.EBusState.Up;
             }
-        }else if(Latitude > 37.234000 && Latitude < 37.238400 && eState.equals(Constants.EBusState.Up)){
+        }else if((Latitude > 37.234691 && Latitude < 37.238851 && Longitude > 127.184025 && Longitude < 127.186986) ||
+                (Latitude > 37.234110 && Latitude < 37.238209 && Longitude > 127.187995 && Longitude < 127.190728) && eState.equals(Constants.EBusState.Up)){
             if( pos ==4 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
             }
-        }else if(Latitude > 37.231600 && Latitude < 37.234000 && eState.equals(Constants.EBusState.Up)){
+        }else if(Latitude > 37.232000 && Latitude < 37.234106 && Longitude > 127.185514 && Longitude < 127.189767 && eState.equals(Constants.EBusState.Up)){
             if( pos == 5 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
             }
-        }else if(Latitude > 37.222200 && Latitude < 37.231600 && eState.equals(Constants.EBusState.Up)){
+        }else if(Latitude > 37.224650 && Latitude < 37.231973 && Longitude > 127.185514 && Longitude < 127.189827 && eState.equals(Constants.EBusState.Up)){
             if( pos == 6 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
@@ -170,7 +178,12 @@ public class ListViewAdapter extends BaseAdapter {
                     btn.setSelected(false);
                     check_num = 0;
                 }
+                Thread t = new Thread(new PushThread(context,poss, eState));
+                t.start();
+
             }
+
+
         });
         btn.setFocusable(false);
 
