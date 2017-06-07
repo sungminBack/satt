@@ -135,13 +135,12 @@ public class Gps_Receiver_Push {
                         break;
                     }
                 case 3:
-                    if(Latitude > 37.234110 && Latitude < 37.238209 && Longitude > 127.187995 && Longitude < 127.190728 && eState.equals(Constants.EBusState.Down)){
+                    if(Latitude > 37.236582 && Latitude < 37.238137 && Longitude > 127.188989 && Longitude < 127.190480 && eState.equals(Constants.EBusState.Down)){
                         showPush(context);
                         break;
                     }
                 case 4:
-                    if((Latitude > 37.234691 && Latitude < 37.238851 && Longitude > 127.184025 && Longitude < 127.186986) ||
-                            (Latitude > 37.234110 && Latitude < 37.238209 && Longitude > 127.187995 && Longitude < 127.190728) && eState.equals(Constants.EBusState.Up)){
+                    if((Latitude > 37.236285 && Latitude < 37.238843 && Longitude > 127.184196 && Longitude < 127.187267) && eState.equals(Constants.EBusState.Down)){
                         showPush(context);
                         break;
                     }
@@ -162,6 +161,7 @@ public class Gps_Receiver_Push {
                 default:
                     break;
             }
+
 
         }catch(JSONException e){
             e.printStackTrace();

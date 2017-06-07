@@ -106,44 +106,52 @@ public class ListViewAdapter extends BaseAdapter {
         //리스트위치1일때 아이콘 보이게
 
 
+        //거점
         if(Latitude > 37.223344 && Latitude < 37.224647 && Longitude > 127.185406 && Longitude < 127.188389 && eState.equals(Constants.EBusState.Down)){
             if( pos == 0 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
             }
+            // 이마트 하행
         }else if(Latitude > 37.224650 && Latitude < 37.231973 && Longitude > 127.185514 && Longitude < 127.189827 && eState.equals(Constants.EBusState.Down)){
             if( pos == 1 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
             }
+            // 진입로 하행
         }else if(Latitude > 37.232000 && Latitude < 37.234106 && Longitude > 127.185514 && Longitude < 127.189767 && eState.equals(Constants.EBusState.Down)){
             if( pos == 2 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
             }
-        }else if(Latitude > 37.234110 && Latitude < 37.238209 && Longitude > 127.187995 && Longitude < 127.190728 && eState.equals(Constants.EBusState.Down)){
+            // 명지대역
+        }else if(Latitude > 37.236582 && Latitude < 37.238137 && Longitude > 127.188989 && Longitude < 127.190480 && eState.equals(Constants.EBusState.Down)){
             if( pos == 3 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
-                eState = Constants.EBusState.Up;
+
             }
-        }else if((Latitude > 37.234691 && Latitude < 37.238851 && Longitude > 127.184025 && Longitude < 127.186986) ||
-                (Latitude > 37.234110 && Latitude < 37.238209 && Longitude > 127.187995 && Longitude < 127.190728) && eState.equals(Constants.EBusState.Up)){
+            // 진입로 상행
+        }else if((Latitude > 37.236285 && Latitude < 37.238843 && Longitude > 127.184196 && Longitude < 127.187267) && eState.equals(EBusState.Down)){
             if( pos ==4 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
+                eState = EBusState.Up;
             }
+            // 이마트 상행
         }else if(Latitude > 37.232000 && Latitude < 37.234106 && Longitude > 127.185514 && Longitude < 127.189767 && eState.equals(Constants.EBusState.Up)){
             if( pos == 5 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
             }
+            // 명진당 행
         }else if(Latitude > 37.224650 && Latitude < 37.231973 && Longitude > 127.185514 && Longitude < 127.189827 && eState.equals(Constants.EBusState.Up)){
             if( pos == 6 ){
                 iconImageView.setVisibility(View.VISIBLE);
                 descTextView.setVisibility(View.VISIBLE);
                 eState = Constants.EBusState.Down;
             }
+            // 3공행
         }else if(Latitude > 37.219400 && Latitude < 37.222200 ){
             if( pos == 7 ){
                 iconImageView.setVisibility(View.VISIBLE);
@@ -151,7 +159,6 @@ public class ListViewAdapter extends BaseAdapter {
                 eState = Constants.EBusState.Down;
             }
         }
-
         //버튼을 클릭했을 때 이벤트 발생
         final ImageButton btn = (ImageButton)convertView.findViewById(com.satt.mjbus.R.id.button);
       /*  btn.setOnClickListener(new View.OnClickListener() {
