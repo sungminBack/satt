@@ -34,7 +34,7 @@ public class CustomAdapter extends PagerAdapter {
 
         ImageView img = (ImageView)view.findViewById(com.satt.mjbus.R.id.img_viewpager_childimage);
 
-        img.setImageResource(R.drawable.help_img03+position);
+        img.setImageResource(R.drawable.help1 +position);
 
         container.addView(view);
 
