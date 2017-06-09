@@ -174,6 +174,8 @@ public class ListViewAdapter extends BaseAdapter {
                     btn.setBackgroundDrawable(
                             context.getResources().getDrawable(R.drawable.bt_alarm_on)
                             );
+                    Thread t = new Thread(new PushThread(context, poss, eState));
+                    t.start();
                 }else{
                     btn.setBackgroundDrawable(
                             context.getResources().getDrawable(R.drawable.bt_alarm_off)
